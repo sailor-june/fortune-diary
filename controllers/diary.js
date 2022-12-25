@@ -39,7 +39,7 @@ diaryRouter.post("/", (req,res)=>{
         if (error){
             console.log(error)
         }
-        //res.redirect("/diary")
+        res.send("success")
     })
 })
 
