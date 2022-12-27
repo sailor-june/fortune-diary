@@ -1,26 +1,58 @@
-:root{
-    --deck-shadow: 1px 1px white, 2px 2px gray, 3px 3px white, 4px 4px, 5px 5px gray, 6px 6px white, 7px 7px gray, 8px 8px, 9px 9px gray, 10px 10px white, 11px 11px gray, 12px 12px, -1px -1px;
-  }
-  body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: blue;
-  }
-  .deck{background-color: red;
-    box-shadow: var(--deck-shadow);
-   border-radius:15px;
+:root {
+  --deck-shadow: 1px 1px white, 2px 2px gray, 3px 3px white, 4px 4px,
+    5px 5px gray, 6px 6px white, 7px 7px gray, 8px 8px, 9px 9px gray,
+    10px 10px white, 11px 11px gray, 12px 12px, -1px -1px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+}
+#upper{
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#lower{
+  max-width: 80vw;
+  flex-wrap: wrap;
+}
+#deck {
+  background-color: red;
+  box-shadow: var(--deck-shadow);
+  border-radius: 15px;
   height: 336px;
   width: 200px;
-  transition: ease-in-out 1s;}
-  
-  .card{
-    background-color: red;
-   border-radius:15px;
+  transition: ease-in-out 1s;
+}
+#deck:hover {
+  box-shadow: var(--deck-shadow), 0px 0px 15px 10px hotpink,
+    10px 10px 15px 10px white;
+}
+
+.card {
+  background-color: red;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
   height: 336px;
   width: 200px;
-  }
-  .deck:hover{
-    box-shadow:var(--deck-shadow), 0px 0px 15px 10px hotpink, 10px 10px 15px 10px white;
-  }
+}
+#newslot {
+  margin: 25px;
+  background-color: transparent;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  height: 336px;
+  width: 200px;
+}
+#oldcards{
+  display: flex;
+  flex-direction: row;
+}
+

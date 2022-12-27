@@ -9,6 +9,7 @@ const cardsController = require('./controllers/cards')
 
 
 //////config////////
+mongoose.set("strictQuery",false)
 mongoose.connect(process.env.DATABASE_URI)
 const PORT = process.env.PORT;
 const db = mongoose.connection;
