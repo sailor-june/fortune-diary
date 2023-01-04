@@ -2,7 +2,7 @@ const express=require("express");
 const mongoose = require('mongoose')
 const diaryRouter = express.Router();
 const Diary=require("../models/diary")
-const Cards = require ('../models/tarot-images')
+const Cards = require ('../public/js/tarot-images')
 
 
 
@@ -35,7 +35,9 @@ diaryRouter.get("/new",(req,res)=>{
 })
 ////create
 diaryRouter.post("/", (req,res)=>{
+    console.log(req.body)
     Diary.create(req.body,(error,createdEntry)=>{
+        
         if (error){
             console.log(error)
         }

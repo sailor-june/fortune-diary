@@ -1,4 +1,4 @@
-module.exports=[{
+const tarotData=[{
   "description": "tarot cards and basic information about them, as well as references to corresponding scans",
   "cards": [
     {
@@ -3088,3 +3088,5 @@ module.exports=[{
   ]
 }
 ]
+
+module.exports =tarotData

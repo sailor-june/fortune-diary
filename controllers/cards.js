@@ -1,14 +1,13 @@
-const { application } = require("express");
 const express = require("express");
 const mongoose = require("mongoose");
 const cardRouter = express.Router();
 const Diary = require("../models/diary.js");
-const allCards = require("../models/tarot-images.js");
+const allCards = require("../public/js/tarot-images");
+
 
 cardRouter.use(express.static("public"));
-cardRouter.use(express.static("cards"));
 
-//
+
 /////Index
 cardRouter.get("/", (req, res) => {
   res.render("draw.ejs", {
