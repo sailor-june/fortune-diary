@@ -9,11 +9,22 @@
 </head>
 <body>
     DIARY PAGE
-    <div class="container">
+    <div id="upper">
+       
+
     <a>CREATE ENTRY</a>
+    
     <% for (let entry of entries){ %>
-    <div class="card">
+    <% let signifier = {} %>
+    <%  for (let card of Deck.cards){%>
+        <% if (card.suit === entry.cards[0].suit&& card.number===entry.cards[0].number){signifier=card} }%> 
+           
+        <div class="card"><a href="/diary/<%=entry._id%>"><img src="../cards/<%=signifier.img%>"></img></a>
+        </div> 
+
+   
     <%}%>
     </div>
+   
 </body>
 </html>

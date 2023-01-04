@@ -91,6 +91,9 @@ const signifier = document.getElementById("signifier");
 const oldCards = document.getElementById("oldcards");
 const cardSlot = document.getElementById("newslot");
 const $deck = document.getElementById("deck");
+
+
+/////////////fetch images and other data from library/////////
 let library = { cards : []}
 fetch('../tarot-images.json')
   .then((response) => response.json())
@@ -104,6 +107,7 @@ function drawCard() {
   if (!cardSlot.firstChild) {
     let choice = Math.floor(Math.random() * deck.cards.length);
     let rawCard = {
+
       suit: deck.cards[choice].suit,
       number: deck.cards[choice].value,
     };

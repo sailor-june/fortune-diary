@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    SHOW PAGE
+    <div id="upper">
+    <% for (let i of entry.cards){ %>
+        <% let card = {}%>
+        <% for (let item of Deck.cards){ %>
+            <% if (item.suit === i.suit && item.number===i.number){ %>
+            <%    card = item %>
+            <%}}%>
+
+        <div class="card<% if (i === entry.cards[0]){ %> signifier <% } %>" ><img src="../cards/<%=card.img%>"></img></div>
+    <%}%>
+    </div>
+</body>
+</html>

@@ -7,6 +7,6 @@ const entrySchema = new Schema({
      number: {type:String, required: true}},
   ],
   notes: { type: String, required: false },
-})
+},{timestamps: {createdAt: 'created_at'}})
 
 module.exports = mongoose.model("Entry", entrySchema)
