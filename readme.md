@@ -1,3 +1,12 @@
+# welcome
+technologies used-
+javascript 
+ejs
+css
+mongoose
+express
+
+
 ### THE DRAW PAGE
 on the draw page, click the deck to draw a card.
 click again to send the card below.
@@ -15,4 +24,12 @@ on the reading show page, you can view all of the cards in any given reading. Yo
 ### EDIT PAGE
 
 on the edit page, you can change the suit and number of any card in the reading.
+
+#### future enhancements
+
+- create a reading from scratch
+- provide details about card meanings
+- add new cards from the edit page
+- user authentication
+- further edge case improvement
 
