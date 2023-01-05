@@ -35,6 +35,10 @@ diaryRouter.delete("/:id", (req,res)=>{
 diaryRouter.put("/:id",(req,res)=>{
 Diary.findById(req.params.id, (err,data)=>{
 let newReading = {cards:data.cards}
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+req.body.suit = capitalizeFirstLetter(req.body.suit)
 
 newReading.cards[req.body.index].suit =req.body.suit
 newReading.cards[req.body.index].number = req.body.number
