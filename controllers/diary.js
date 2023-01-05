@@ -25,18 +25,40 @@ diaryRouter.get("/new", (req, res) => {
   });
 });
 ////delete
+diaryRouter.delete("/:id", (req,res)=>{
+    Diary.findByIdAndDelete(req.params.id,(err,data)=>{
+        res.redirect("/diary")
+    })
+})
+
 /////update
+diaryRouter.put("/:id",(req,res)=>{
+Diary.findById(req.params.id, (err,data)=>{
+let newReading = {cards:data.cards}
+
+newReading.cards[req.body.index].suit =req.body.suit
+newReading.cards[req.body.index].number = req.body.number
+Diary.findByIdAndUpdate(req.params.id, newReading, {new:true},(error,upDatedEntry)=>{res.redirect(`/diary/${req.params.id}`)})})})
+ 
+
 ////create
 diaryRouter.post("/", (req, res) => {
-  console.log(req.body);
   Diary.create(req.body, (error, createdEntry) => {
     if (error) {
       console.log(error);
     }
-    res.send("success");
+    res.redirect("/diary");
   });
 });
 ///edit
+diaryRouter.get("/edit/:id", (req,res)=>{
+    Diary.findById(req.params.id, (err,foundEntry)=>{
+        res.render("edit.ejs",{
+            entry: foundEntry,
+            Deck: Cards
+        })
+    })
+})
 ////show
 diaryRouter.get("/:id", (req, res) => {
   Diary.findById(req.params.id, (err, foundEntry) => {

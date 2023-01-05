@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    SHOW PAGE
+    <a href="/diary"><button>Return to diary</button></a>
+    <a href="/diary/edit/<%=entry._id%>"><button>Edit this entry</button></a>
     <div id="upper">
     <% for (let i of entry.cards){ %>
         <% let card = {}%>

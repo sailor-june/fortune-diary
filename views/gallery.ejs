@@ -9,10 +9,11 @@
 </head>
 <body>
     DIARY PAGE
+    <a href="/home">return home</a>
     <div id="upper">
        
 
-    <a>CREATE ENTRY</a>
+    
     
     <% for (let entry of entries){ %>
     <% let signifier = {} %>
@@ -20,6 +21,7 @@
         <% if (card.suit === entry.cards[0].suit&& card.number===entry.cards[0].number){signifier=card} }%> 
            
         <div class="card"><a href="/diary/<%=entry._id%>"><img src="../cards/<%=signifier.img%>"></img></a>
+            <p><%= entry.created_at %></p>
         </div> 
 
    

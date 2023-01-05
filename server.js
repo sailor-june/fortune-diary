@@ -27,6 +27,13 @@ app.use('/draw', cardsController)
 app.use('/diary', diaryController)
 
 
+//
+app.get("/"),(req,res)=>{
+    res.redirect("/home")
+}
+
+app.get("/home", (req,res)=>{
+    res.render("home.ejs")})
 /////listener
 app.listen(PORT,()=>{
     console.log(`listening on port ${PORT}`)

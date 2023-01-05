@@ -87,6 +87,7 @@ const reading = [];
 ///////////////////////////////
 const readingForm = document.getElementById("readingForm");
 const save = document.getElementById("save");
+const home = document.getElementById("home")
 const signifier = document.getElementById("signifier");
 const oldCards = document.getElementById("oldcards");
 const cardSlot = document.getElementById("newslot");
@@ -170,6 +171,11 @@ save.addEventListener("click", function (e) {
     }),
     headers: {
       "Content-type": "application/json",
-    },
-  });
+    }
+  })
+  .then(response=>{
+    if (response.redirected) {
+      window.location.href = response.url
+    }
+  })
 });
