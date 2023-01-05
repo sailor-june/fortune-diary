@@ -9,6 +9,8 @@
 </head>
 <body>
     edit page
+    <a href="/diary"><button>Return to diary</button></a>
+    <a href="/home"><button>Return Home</button></a>
        <div id="upper">
         
         <% let index = 0 %>
@@ -17,13 +19,13 @@
             
             <% for (let item of Deck.cards){ %>
                 <% if (item.suit === i.suit && item.number===i.number){ %>
-                <%    card = item %>
+                <% card = item %>
                 <%}}%>
     
             <div class="card<% if (i === entry.cards[0]){ %> signifier <% } %>" >
                 <img src="../cards/<%=card.img%>"></img>
                 <form action="/diary/<%=entry._id%>?_method=PUT" method="POST">
-                    <input type="text" name="number" value="<%=card.number%>">
+                    <input type="text" name="number"  value="<%=card.number%>">
                     of
                     <input type="text" name="suit" value="<%= card.suit %>">
                     <input type="number" name="index" value="<%= index %>" class="hidden">

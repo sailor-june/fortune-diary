@@ -15,10 +15,7 @@ cardRouter.get("/", (req, res) => {
   });
  
 });
-///new?
-///delete
-////update
-////create
+
 cardRouter.post("/"),
   (req, res) => {
     Diary.create(req.body, (error, createdEntry) => {
