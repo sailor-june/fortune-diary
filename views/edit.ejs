@@ -27,7 +27,7 @@
                 <form action="/diary/<%=entry._id%>?_method=PUT" method="POST">
                     <input type="text" name="number"  value="<%=card.number%>">
                     of
-                    <input type="text" name="suit" value="<%= card.suit %>">
+                    <input type="text" name="suit" value="<%= card.suit %>" placeholder="Trump, Swords, Wands, Pentacles, Cups">
                     <input type="number" name="index" value="<%= index %>" class="hidden">
                 <button type="submit"> Submit changes</button>
             </form>
